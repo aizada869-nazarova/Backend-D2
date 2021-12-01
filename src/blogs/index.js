@@ -5,7 +5,7 @@ import { dirname, join } from "path"
 import uniqid from "uniqid"
 import createHttpError from "http-errors"
 import { validationResult } from "express-validator"
-import { } from "./validation.js"
+import {blogsValidation  } from "./validation.js"
 
 const blogsRouter = express.Router()
 
@@ -15,7 +15,7 @@ const writeblogs = content => fs.writeFileSync(blogsJSONPath, JSON.stringify(con
 
 // 1.
 
-blogsRouter.post("/",  (req, res, next) => {
+blogsRouter.post("/", blogsValidation , (req, res, next) => {
   try {
     
    const errorsList = validationResult(req)
@@ -38,12 +38,9 @@ blogsRouter.post("/",  (req, res, next) => {
 
 // 2.
 
-const anotherLoggerMiddleware = (req, res, next) => {
-  console.log(`Hey I'm used only on a specific route`)
-  next()
-}
 
-blogsRouter.get("/", anotherLoggerMiddleware, (req, res, next) => {
+
+blogsRouter.get("/",  (req, res, next) => {
   try {
     
     const blogs = getblogs()
