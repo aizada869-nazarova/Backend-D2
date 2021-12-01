@@ -4,8 +4,8 @@ import { fileURLToPath } from "url"
 import { dirname, join } from "path"
 import uniqid from "uniqid"
 import createHttpError from "http-errors"
-// import { validationResult } from "express-validator"
-// import { blogsValidation } from "./validation.js"
+import { validationResult } from "express-validator"
+import { } from "./validation.js"
 
 const blogsRouter = express.Router()
 
@@ -15,7 +15,7 @@ const writeblogs = content => fs.writeFileSync(blogsJSONPath, JSON.stringify(con
 
 // 1.
 
-blogsRouter.post("/",(req, res, next) => {
+blogsRouter.post("/",  (req, res, next) => {
   try {
     
    const errorsList = validationResult(req)
