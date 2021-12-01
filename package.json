@@ -1,0 +1,33 @@
+{
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-list-endpoints": "^6.0.0",
+    "express-validator": "^6.13.0",
+    "http-errors": "^1.8.1",
+    "uniqid": "^5.4.0"
+  },
+  "name": "backend-d2",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon -e js ./src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aizada869-nazarova/Backend-D2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aizada869-nazarova/Backend-D2/issues"
+  },
+  "homepage": "https://github.com/aizada869-nazarova/Backend-D2#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
